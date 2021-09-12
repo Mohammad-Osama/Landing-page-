@@ -18,7 +18,33 @@ sections.forEach((section) => {
               })
     fragment.appendChild(listItem);
         });
-        
+
 // appending all changes to the document 
 document.getElementById('navbar__list').appendChild(fragment) ;
+
+
+// start  intersection observer 
+
+// trigger options 
+const options ={
+       root: null ,
+       rootMargin: '0px' ,
+       threshold : 0.5 
+}
+// defining callback function when trigger occurs
+const func = function (sections) {
+    sections.forEach((section)=>{
+        if (section.isIntersecting) {
+            console.log("intersection happened");
+        }
+    })
+}
+
+// definig intersection observer variable
+const observer = new IntersectionObserver(func ,options) ;
+sections.forEach((section) => {
+    observer.observe(section) ;
+});
+
+// end  intersection observer 
 
