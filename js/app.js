@@ -29,13 +29,17 @@ document.getElementById('navbar__list').appendChild(fragment) ;
 const options ={
        root: null ,
        rootMargin: '0px' ,
-       threshold : 0.5 
+       threshold : 0.7 
 }
 // defining callback function when trigger occurs
 const func = function (sections) {
     sections.forEach((section)=>{
         if (section.isIntersecting) {
+            section.target.classList.add("your-active-class");
             console.log("intersection happened");
+        }
+        else {
+            section.target.classList.remove("your-active-class");
         }
     })
 }
