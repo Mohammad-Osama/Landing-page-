@@ -10,6 +10,7 @@ sections.forEach((section) => {
     let link = section.getAttribute("id");
     let text = section.getAttribute("data-nav");
     listItem.innerHTML = `<a href="#${link}">${text}</a>`; 
+    listItem.classList.add("menu__link");
 
     // Event listener with a scroll
     listItem.addEventListener('click',(x)=> {
@@ -36,7 +37,6 @@ const func = function (sections) {
     sections.forEach((section)=>{
         if (section.isIntersecting) {
             section.target.classList.add("your-active-class");
-            console.log("intersection happened");
         }
         else {
             section.target.classList.remove("your-active-class");
