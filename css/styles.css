@@ -85,6 +85,14 @@ a {text-decoration: none ;}
     font-weight: bold;
     color: #000;
 }
+.active {    /* new class -- copied the section.active class and did few changes   */
+    background: rgb(0, 0, 0);
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0) 100%);
+    background-color: lightcoral;
+    border: double black;
+
+
+}
 
 
 .navbar__menu .menu__link:hover {
